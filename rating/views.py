@@ -21,7 +21,7 @@ class RecommendView(APIView):
 	def get(self, request, format=None):
 		# User id fetch from the API
 		user_id= request.GET.get('user_id')
-		rating_r = requests.get('http://127.0.0.1:8007/rating/')
+		rating_r = requests.get('http://35.200.250.64:8007/rating/')
 		rating_data=rating_r.json()
 		rating = pd.DataFrame.from_dict(rating_data)
 
@@ -31,7 +31,7 @@ class RecommendView(APIView):
 		corrMatrix = userRatings.corr()
 
 		# Movies rated by the user 
-		myRatings = userRatings.loc["http://127.0.0.1:8007/user/"+user_id+"/"].dropna()
+		myRatings = userRatings.loc["http://35.200.250.64:8007/user/"+user_id+"/"].dropna()
 
 		#For each movie I rated, I'll retrieve the list of similar movies from our correlation matrix. 
 		simCandidates = pd.Series()
