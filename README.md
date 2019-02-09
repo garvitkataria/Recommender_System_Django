@@ -18,3 +18,9 @@
 4. Run Django Server
 
         python manage.py runserver
+
+
+### DEMO
+![alt text](https://github.com/garvitkataria/Recommender_System_Django/blob/master/Demo_Images/step1.png)
+![alt text](https://github.com/garvitkataria/Recommender_System_Django/blob/master/Demo_Images/step2.png)
+![alt text](https://github.com/garvitkataria/Recommender_System_Django/blob/master/Demo_Images/step3.png)
