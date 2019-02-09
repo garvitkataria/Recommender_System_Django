@@ -1,5 +1,9 @@
 # Recommender_System_Django
 
+
+## Angular FrontEnd Server
+https://github.com/garvitkataria/Recommender_System_Angular
+
 ### Setup The Project
 
 1. Create Virtual Environment
