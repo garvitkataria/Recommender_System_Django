@@ -19,6 +19,108 @@
 
         python manage.py runserver
 
+## Directory Structure
+
+          ├── AuthUser
+          │   ├── __init__.py
+          │   ├── __pycache__
+          │   │   ├── __init__.cpython-36.pyc
+          │   │   ├── admin.cpython-36.pyc
+          │   │   ├── models.cpython-36.pyc
+          │   │   ├── serializers.cpython-36.pyc
+          │   │   ├── urls.cpython-36.pyc
+          │   │   └── views.cpython-36.pyc
+          │   ├── admin.py
+          │   ├── apps.py
+          │   ├── migrations
+          │   │   ├── 0001_initial.py
+          │   │   ├── 0002_auto_20190202_0515.py
+          │   │   ├── 0003_auto_20190202_0515.py
+          │   │   ├── 0004_remove_user_avatar.py
+          │   │   ├── __init__.py
+          │   │   └── __pycache__
+          │   │       ├── 0001_initial.cpython-36.pyc
+          │   │       ├── 0002_auto_20190202_0515.cpython-36.pyc
+          │   │       ├── 0003_auto_20190202_0515.cpython-36.pyc
+          │   │       ├── 0004_remove_user_avatar.cpython-36.pyc
+          │   │       └── __init__.cpython-36.pyc
+          │   ├── models.py
+          │   ├── serializers.py
+          │   ├── tests.py
+          │   ├── urls.py
+          │   └── views.py
+          ├── Demo_Images
+          │   ├── step1.png
+          │   ├── step2.png
+          │   └── step3.png
+          ├── Movie
+          │   └── 97332
+          ├── README.md
+          ├── RecomendationSystem
+          │   ├── __init__.py
+          │   ├── __pycache__
+          │   │   ├── __init__.cpython-36.pyc
+          │   │   ├── settings.cpython-36.pyc
+          │   │   ├── urls.cpython-36.pyc
+          │   │   └── wsgi.cpython-36.pyc
+          │   ├── settings.py
+          │   ├── urls.py
+          │   └── wsgi.py
+          ├── db.sqlite3
+          ├── default.jpg
+          ├── manage.py
+          ├── movies
+          │   ├── __init__.py
+          │   ├── __pycache__
+          │   │   ├── __init__.cpython-36.pyc
+          │   │   ├── admin.cpython-36.pyc
+          │   │   ├── models.cpython-36.pyc
+          │   │   ├── serializers.cpython-36.pyc
+          │   │   ├── urls.cpython-36.pyc
+          │   │   └── views.cpython-36.pyc
+          │   ├── admin.py
+          │   ├── apps.py
+          │   ├── migrations
+          │   │   ├── 0001_initial.py
+          │   │   ├── 0002_auto_20190202_0645.py
+          │   │   ├── 0003_auto_20190202_1356.py
+          │   │   ├── 0004_auto_20190202_1637.py
+          │   │   ├── __init__.py
+          │   │   └── __pycache__
+          │   │       ├── 0001_initial.cpython-36.pyc
+          │   │       ├── 0002_auto_20190202_0645.cpython-36.pyc
+          │   │       ├── 0003_auto_20190202_1356.cpython-36.pyc
+          │   │       ├── 0004_auto_20190202_1637.cpython-36.pyc
+          │   │       └── __init__.cpython-36.pyc
+          │   ├── models.py
+          │   ├── serializers.py
+          │   ├── tests.py
+          │   ├── urls.py
+          │   └── views.py
+          ├── rating
+          │   ├── __init__.py
+          │   ├── __pycache__
+          │   │   ├── __init__.cpython-36.pyc
+          │   │   ├── admin.cpython-36.pyc
+          │   │   ├── models.cpython-36.pyc
+          │   │   ├── serializers.cpython-36.pyc
+          │   │   ├── urls.cpython-36.pyc
+          │   │   └── views.cpython-36.pyc
+          │   ├── admin.py
+          │   ├── apps.py
+          │   ├── migrations
+          │   │   ├── 0001_initial.py
+          │   │   ├── __init__.py
+          │   │   └── __pycache__
+          │   │       ├── 0001_initial.cpython-36.pyc
+          │   │       └── __init__.cpython-36.pyc
+          │   ├── models.py
+          │   ├── serializers.py
+          │   ├── tests.py
+          │   ├── urls.py
+          │   └── views.py
+          └── requirements.txt
+
 
 ## DEMO
 1. <h5>Step 1</h5>
