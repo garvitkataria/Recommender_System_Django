@@ -23,6 +23,31 @@ https://github.com/garvitkataria/Recommender_System_Angular
 
         python manage.py runserver
         
+## API Docs
+1. API to get all the movies or post a new movie
+
+          http://35.200.250.64:8007/movies/
+
+2. API to get all the users or post a new user
+          
+          http://35.200.250.64:8007/user/
+          
+3. API to get all the ratings or post a new rating
+          
+          http://35.200.250.64:8007/rating/
+          
+4. API to get recommendation by Item-Item Collaborative Filtering
+          
+          http://35.200.250.64:8007/rating/recommend/?user_id=1
+          
+5. API to get recommendation by User-User Collaborative Filtering
+           
+          http://35.200.250.64:8007/rating/recommend2/?user_id=1
+
+6. API to get recommendation by Singular Value Decomposition(SVD)
+          
+          http://35.200.250.64:8007/rating/recommend3/?user_id=1
+
 
 ## DEMO
 1. <h5>Step 1</h5>
