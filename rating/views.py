@@ -19,17 +19,15 @@ class ratingView(viewsets.ModelViewSet):
 class RecommendView(APIView):
 	
 	def get(self, request, format=None):
-		# print("HI")
-		# user_id="4"
+
 		user_id= request.GET.get('user_id')
 		rating_r = requests.get('http://127.0.0.1:8000/rating/')
 		rating_data=rating_r.json()
 		rating = pd.DataFrame.from_dict(rating_data)
-		# print(rating.head())
+
 		userRatings = rating.pivot_table(index=['user'],columns=['movie'],values='rating')
-		# print(userRatings.head())
+
 		corrMatrix = userRatings.corr()
-		# print(corrMatrix.head())
 
 		myRatings = userRatings.loc["http://127.0.0.1:8000/user/"+user_id+"/"].dropna()
 
@@ -41,7 +39,6 @@ class RecommendView(APIView):
 
 		simCandidates = simCandidates.groupby(simCandidates.index).sum()
 		simCandidates.sort_values(inplace = True, ascending = False)
-		# print(simCandidates)
 
 		simCandidates_positives=simCandidates
 		simCandidates_positives
@@ -55,7 +52,6 @@ class RecommendView(APIView):
 		List_i_rec=[]
 		for i in range(len(myRatings)):
 		    temp=myRatings.index[i]
-		    # print(temp)
 		    List_i_rec.append(str(temp).split('/')[-2])
 		List_i_rec
 
@@ -65,7 +61,6 @@ class RecommendView(APIView):
 		        pass
 		    else:
 		        Final_list.append(i)
-		# print(Final_list)
 
 		Final_list_top_ten=Final_list[0:10]
 		return Response(Final_list_top_ten)
@@ -73,7 +68,6 @@ class RecommendView(APIView):
 class Recommend2View(APIView):
 
 	def get(self, request, format=None):
-		# user_id="1"
 		user_id= request.GET.get('user_id')
 		rating_r = requests.get('http://127.0.0.1:8000/rating/')
 		rating_data=rating_r.json()
