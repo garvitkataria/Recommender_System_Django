@@ -1,5 +1,9 @@
 # Recommender_System_Django
 
+
+## Angular FrontEnd Server
+https://github.com/garvitkataria/Recommender_System_Angular
+
 ### Setup The Project
 
 1. Create Virtual Environment
@@ -18,6 +22,31 @@
 4. Run Django Server
 
         python manage.py runserver
+        
+## API Docs
+1. API to get all the movies or post a new movie
+
+          http://35.200.250.64:8007/movies/
+
+2. API to get all the users or post a new user
+          
+          http://35.200.250.64:8007/user/
+          
+3. API to get all the ratings or post a new rating
+          
+          http://35.200.250.64:8007/rating/
+          
+4. API to get recommendation by Item-Item Collaborative Filtering
+          
+          http://35.200.250.64:8007/rating/recommend/?user_id=1
+          
+5. API to get recommendation by User-User Collaborative Filtering
+           
+          http://35.200.250.64:8007/rating/recommend2/?user_id=1
+
+6. API to get recommendation by Singular Value Decomposition(SVD)
+          
+          http://35.200.250.64:8007/rating/recommend3/?user_id=1
 
 
 ## DEMO
@@ -43,3 +72,51 @@ You can check the movie recommendations by these 3 Algorithms.
 Click on finish button to go back to the welcome page.
 
 ![alt text](https://github.com/garvitkataria/Recommender_System_Django/blob/master/Demo_Images/step3.png)
+
+
+
+## Directory Structure
+
+          ├── AuthUser
+          │   ├── __init__.py
+          │   ├── admin.py
+          │   ├── apps.py
+          │   ├── models.py
+          │   ├── serializers.py
+          │   ├── tests.py
+          │   ├── urls.py
+          │   └── views.py
+          ├── Demo_Images
+          │   ├── step1.png
+          │   ├── step2.png
+          │   └── step3.png
+          ├── Movie
+          │   └── 97332
+          ├── README.md
+          ├── RecomendationSystem
+          │   ├── __init__.py
+          │   ├── settings.py
+          │   ├── urls.py
+          │   └── wsgi.py
+          ├── db.sqlite3
+          ├── default.jpg
+          ├── manage.py
+          ├── movies
+          │   ├── __init__.py
+          │   ├── admin.py
+          │   ├── apps.py
+          │   ├── models.py
+          │   ├── serializers.py
+          │   ├── tests.py
+          │   ├── urls.py
+          │   └── views.py
+          ├── rating
+          │   ├── __init__.py
+          │   ├── admin.py
+          │   ├── apps.py
+          │   ├── models.py
+          │   ├── serializers.py
+          │   ├── tests.py
+          │   ├── urls.py
+          │   └── views.py
+          └── requirements.txt
