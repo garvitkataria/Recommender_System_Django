@@ -19,7 +19,7 @@ class ratingView(viewsets.ModelViewSet):
 class RecommendView(APIView):
 	
 	def get(self, request, format=None):
-		server = 'http://35.200.250.64:8007/'
+		server = 'http://127.0.0.1:8007/'
 		# User id fetch from the API
 		user_id= request.GET.get('user_id')
 		rating_r = requests.get(server+'rating/')
@@ -80,7 +80,7 @@ class RecommendView(APIView):
 class Recommend2View(APIView):
 
 	def get(self, request, format=None):
-		server = 'http://35.200.250.64:8007/'
+		server = 'http://127.0.0.1:8007/'
 		# User id fetch from the API
 		user_id= request.GET.get('user_id')
 		rating_r = requests.get(server+'rating/')
@@ -141,7 +141,7 @@ class Recommend2View(APIView):
 # API of Matrix Factorization via Singular Value Decomposition
 class Recommend3View(APIView):
 	def get(self, request, format=None):
-		server = 'http://35.200.250.64:8007/'
+		server = 'http://127.0.0.1:8007/'
 		# User id fetch from the API
 		user_id= request.GET.get('user_id')
 		rating_r = requests.get(server+'rating/')
