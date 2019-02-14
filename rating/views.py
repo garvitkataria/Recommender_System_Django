@@ -19,9 +19,10 @@ class ratingView(viewsets.ModelViewSet):
 class RecommendView(APIView):
 	
 	def get(self, request, format=None):
+		server = 'http://35.200.250.64:8007/'
 		# User id fetch from the API
 		user_id= request.GET.get('user_id')
-		rating_r = requests.get('http://35.200.250.64:8007/rating/')
+		rating_r = requests.get(server+'rating/')
 		rating_data=rating_r.json()
 		rating = pd.DataFrame.from_dict(rating_data)
 
@@ -31,7 +32,7 @@ class RecommendView(APIView):
 		corrMatrix = userRatings.corr()
 
 		# Movies rated by the user 
-		myRatings = userRatings.loc["http://35.200.250.64:8007/user/"+user_id+"/"].dropna()
+		myRatings = userRatings.loc[server+"user/"+user_id+"/"].dropna()
 
 		#For each movie I rated, I'll retrieve the list of similar movies from our correlation matrix. 
 		simCandidates = pd.Series()
@@ -79,9 +80,10 @@ class RecommendView(APIView):
 class Recommend2View(APIView):
 
 	def get(self, request, format=None):
+		server = 'http://35.200.250.64:8007/'
 		# User id fetch from the API
 		user_id= request.GET.get('user_id')
-		rating_r = requests.get('http://127.0.0.1:8007/rating/')
+		rating_r = requests.get(server+'rating/')
 		rating_data=rating_r.json()
 
 		rating = pd.DataFrame.from_dict(rating_data)
@@ -91,13 +93,13 @@ class Recommend2View(APIView):
 		corrMatrix = userRatings.corr()
 
 		# Movies rated by the user 
-		myRatings = userRatings.loc[:,"http://127.0.0.1:8007/user/"+user_id+"/"].dropna()
+		myRatings = userRatings.loc[:,server+"user/"+user_id+"/"].dropna()
 
 		''' Through Correlation matrix get the user which has similarity greater than 0 (As we have less user now).
 		Drop the user himself from the condidates of similar user. '''
-		my_releation_with_users = corrMatrix.loc[:,"http://127.0.0.1:8007/user/"+user_id+"/"].dropna()
+		my_releation_with_users = corrMatrix.loc[:,server+"user/"+user_id+"/"].dropna()
 		my_releation_with_users_positive=my_releation_with_users[my_releation_with_users>0]
-		my_releation_with_users_positive_2 = my_releation_with_users_positive.drop("http://127.0.0.1:8007/user/"+user_id+"/")
+		my_releation_with_users_positive_2 = my_releation_with_users_positive.drop(server+"user/"+user_id+"/")
 		
 		#For each user in the my_releation_with_users_positive_2, I'll retrieve the list of movies rated by that user. 
 		simCandidates = pd.Series()
@@ -139,9 +141,10 @@ class Recommend2View(APIView):
 # API of Matrix Factorization via Singular Value Decomposition
 class Recommend3View(APIView):
 	def get(self, request, format=None):
+		server = 'http://35.200.250.64:8007/'
 		# User id fetch from the API
 		user_id= request.GET.get('user_id')
-		rating_r = requests.get('http://127.0.0.1:8007/rating/')
+		rating_r = requests.get(server+'rating/')
 		rating_data=rating_r.json()
 
 		rating = pd.DataFrame.from_dict(rating_data)
@@ -159,7 +162,7 @@ class Recommend3View(APIView):
 		all_user_predicted_ratings = np.dot(np.dot(U, sigma), Vt) + user_ratings_mean.reshape(-1, 1)
 
 		# Movies rated by the user 
-		myRatings = userRatings.loc["http://127.0.0.1:8007/user/"+user_id+"/"]
+		myRatings = userRatings.loc[server+"user/"+user_id+"/"]
 		myRatings = myRatings[myRatings>0]
 		
 		# List_i_rec contains the id of movies which I rated.
@@ -171,7 +174,7 @@ class Recommend3View(APIView):
 
 		# Getting the predicted ratings of user from the list of all_user_predicted_ratings
 		preds_df = pd.DataFrame(all_user_predicted_ratings, columns = userRatings.columns,index= userRatings.index)
-		preds_df_user = preds_df.loc['http://127.0.0.1:8007/user/'+user_id+'/']
+		preds_df_user = preds_df.loc[server+'user/'+user_id+'/']
 		preds_df_user.sort_values(inplace = True, ascending = False)
 
 		# Removing the movies which I rated from the list of recommended movies
