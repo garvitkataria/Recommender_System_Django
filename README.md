@@ -21,7 +21,7 @@ https://github.com/garvitkataria/Recommender_System_Angular
     
 4. Run Django Server
 
-        python manage.py runserver
+        python manage.py runserver  0.0.0.0:8007
         
 ## API Docs
 1. API to get all the movies or post a new movie
