@@ -60,6 +60,14 @@ https://github.com/garvitkataria/Recommender_System_Django/DataScraping/MovieDat
 
 Scrapped Movie Data from IMDB:
 https://github.com/garvitkataria/Recommender_System_Django/blob/master/DataScraping/ScrappedMovieData.json
+
+### Code for Algorithms used in the Recommendation System
+1. Item-item Collaborative Filtering 
+2. User-user Collaborative Filtering
+3. Matrix Factorization via Singular Value Decomposition (SVD)
+
+https://github.com/garvitkataria/Recommender_System_Django/blob/master/rating/views.py
+
 ## DEMO
 1. <h5>Step 1</h5>
 Enter your email and Phone no. to get started.
