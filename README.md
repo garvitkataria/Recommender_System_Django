@@ -48,7 +48,18 @@ https://github.com/garvitkataria/Recommender_System_Angular
           
           http://35.200.250.64:8007/rating/recommend3/?user_id=1
 
+## MovieLens Dataset
+https://github.com/garvitkataria/Recommender_System_Django/tree/master/DataScraping/data
 
+This dataset (ml-latest-small) describes 5-star rating and free-text tagging activity from [MovieLens](http://movielens.org), a movie recommendation service. It contains 100836 ratings and 3683 tag applications across 9742 movies. These data were created by 610 users between March 29, 1996 and September 24, 2018. This dataset was generated on September 26, 2018.
+
+
+## Data Scraping
+
+https://github.com/garvitkataria/Recommender_System_Django/DataScraping/MovieDataScraping.ipynb
+
+Scrapped Movie Data from IMDB:
+https://github.com/garvitkataria/Recommender_System_Django/blob/master/DataScraping/ScrappedMovieData.json
 ## DEMO
 1. <h5>Step 1</h5>
 Enter your email and Phone no. to get started.
